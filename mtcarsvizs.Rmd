@@ -1,0 +1,34 @@
+---
+title: "mtcars_viz"
+author: "Kelvin Nyongesa"
+date: "2022-11-10"
+output: html_document
+---
+
+```{r}
+mtcars
+```
+
+```{r}
+#view rows and columns
+
+dim(mtcars)
+
+```
+```{r}
+library(ggplot2)
+ggplot(data = mtcars, mapping = aes(x = cyl, y = drat)) +
+  geom_point() +
+  labs(title = "cyl Vs. drat of mtcars",
+       x = "cyl", y = "drat")
+```
+```{r}
+###Viewing the cyl vs drat distn in gears
+library(ggplot2)
+ggplot(data = mtcars, mapping = aes(x = cyl, y = drat)) +
+  geom_point() +
+  labs(title = "cyl Vs. drat of mtcars",
+       x = "cyl", y = "drat")+facet_wrap(~gear)
+```
+```
+
